@@ -33,3 +33,25 @@ sections.forEach( (section, index) => {
 sections.forEach( section => {
     sectionPositions[section.id] = section.offsetTop
 })
+
+// create onscroll function
+const onScroll = () => {
+    // get the current scroll position
+    let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+
+    for (const section in sectionPositions) {
+        // check if position of current section is less than or equal
+        // to the position of the current scroll position
+        if (sectionPositions[section] <= scrolLPosition) {
+            // if true, remove the active class from the current element
+            document.querySelector('.active').setAttribute('class', 'menu__link')
+            // then find the new active link
+            // and target the active links parent element (the li)
+            // and add the active class
+            document.querySelector(`a[href*='#${section}']`)
+                .parentElement
+                .setAttribute('class', 'menu__link acive')
+
+        }
+    }
+}
