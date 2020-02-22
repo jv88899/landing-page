@@ -55,3 +55,6 @@ const onScroll = () => {
         }
     }
 }
+
+// create scroll event listener
+document.addEventListener('scroll', onScroll)
