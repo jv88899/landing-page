@@ -27,3 +27,9 @@ sections.forEach( (section, index) => {
     // add the new element to the navbar
     navbarList.appendChild(newElement)
 })
+
+// get the offsetTop position for each section
+// and add them to the sectionPositions object
+sections.forEach( section => {
+    sectionPositions[section.id] = section.offsetTop
+})
